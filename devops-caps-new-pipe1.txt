@@ -1,7 +1,7 @@
 pipeline{
 	agent none
 	environment{
-		DOCKERHUB_CREDENTIALS=credentials('')
+		DOCKERHUB_CREDENTIALS=credentials('dockerhubcredentials')
 	}
 	stages{
 		stage('Import src from Git'){
