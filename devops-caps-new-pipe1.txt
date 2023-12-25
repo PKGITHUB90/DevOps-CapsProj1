@@ -6,38 +6,38 @@ pipeline{
 	stages{
 		stage('Import src from Git'){
 			agent{
-				label 'kubemaster'
+				label 'k8s_master'
 			}
 			steps{
-				git 'https://github.com/DevGitRemote/capstone1newdevops.git'
+				git 'https://github.com/PKGITHUB90/DevOps-CapsProj1.git'
 			}
 		}
 		stage('Docker Build'){
 			agent{
-				label 'kubemaster'
+				label 'k8s_master'
 			}
 			steps{
-				sh 'sudo docker build /var/lib/jenkins/workspace/Dev-test-Docker -t devrajdock/capsnewdevops:latest'
+				sh 'sudo docker build /var/lib/jenkins/workspace/Dev-test-Docker -t pkt90docker/capsnewdevops:latest'
 				echo 'image build successfully'
 			}
 		}
 		stage('Docker Login and Image Push'){
 			agent{
-				label 'kubemaster'
+				label 'k8s_master'
 			}
 			steps{
 				sh 'echo $DOCKERHUB_CREDENTIALS_PSW | sudo docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
 				echo 'Docker login successful'
-				sh 'sudo docker push devrajdock/capsnewdevops:latest'
+				sh 'sudo docker push pkt90docker/capsnewdevops:latest'
 				sh 'sudo docker logout'
 			}
 		}
 		stage('Deploy via Docker'){
 			agent{
-				label 'kubemaster'
+				label 'k8s_master'
 			}
 			steps{
-				sh 'sudo docker run -itd -p 85:80 --name con1 -d devrajdock/capsnewdevops:latest'
+				sh 'sudo docker run -itd -p 85:80 --name con1 -d pkt90docker/capsnewdevops:latest'
 			}
 		}
 	}
