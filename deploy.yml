@@ -17,7 +17,7 @@ spec:
    spec:
     containers:
     - name: con2
-      image: devrajdock/capsnewdevops:latest
+      image: pkt90docker/capsnewdevops:latest
       ports:
       - containerPort: 80
 ...
