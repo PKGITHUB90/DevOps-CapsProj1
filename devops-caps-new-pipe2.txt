@@ -14,9 +14,9 @@ pipeline{
 				label 'k8s_master'
 			}
 			steps{
-				sh 'kubectl apply -f ./name.yml'
-				sh 'kubectl apply -f ./deploy.yml -n devspace'
-				sh 'kubectl apply -f ./svc.yml -n devspace'
+				sh 'kubectl apply -f /home/ubuntu/workspace/DevOps-Capstone-Project1-k8sDeploy/name.yml'
+				sh 'kubectl apply -f /home/ubuntu/workspace/DevOps-Capstone-Project1-k8sDeploy/deploy.yml -n devspace'
+				sh 'kubectl apply -f /home/ubuntu/workspace/DevOps-Capstone-Project1-k8sDeploy/svc.yml -n devspace'
 				echo "Website deployed via K8S"
 			}
 		}
