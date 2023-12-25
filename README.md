@@ -8,5 +8,5 @@
 7. Bastion was created and Terraform and Ansible was installed in them.
 8. Terraform executes main.tf to create infrastructure for 3 new VMs.
 9. Ansible remotely configured java installation to all 3 VMs.
-10. Webhooks used to pull any latest commit in repo - https://github.com/DevGitRemote/capstone1newdevops .
+10. Webhooks used to pull any latest commit in repo - https://github.com/PKGITHUB90/DevOps-CapsProj1.git
 11. All tasks completed and feel free to contact for queries.
