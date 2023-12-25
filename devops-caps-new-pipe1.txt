@@ -17,7 +17,7 @@ pipeline{
 				label 'k8s_master'
 			}
 			steps{
-				sh 'sudo docker build /var/lib/jenkins/workspace/Dev-test-Docker -t pkt90docker/capsnewdevops:latest'
+				sh 'sudo docker build /workspace/DevOps-Capstone-Project1-DeployTest -t pkt90docker/capsnewdevops:latest'
 				echo 'image build successfully'
 			}
 		}
